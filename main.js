@@ -2,8 +2,8 @@ let cont = document.querySelector("#cont");
 
 for (let i = 0; i < 101; i++) {
     let box = document.createElement("div");
-box.setAttribute("id", "box");
-box.setAttribute("class", "box");
+    box.setAttribute("id", "box");
+    box.setAttribute("class", "box");
 
 cont.appendChild(box);
 
@@ -14,12 +14,21 @@ para.setAttribute("class", "para");
 para.textContent = i;
 if (i % 2 == 0) {
     box.style.backgroundColor="green"
+    box.addEventListener("mouseover", () => {
+        para.textContent = "even number"
+    })
 } else if(i % 2 != 0) {
     box.style.backgroundColor="yellow"
+    box.addEventListener("mouseover", () => {
+        para.textContent = "odd number"
+    })
 }
 
 if(isPrime(i)){
     box.style.backgroundColor="red"
+    box.addEventListener("mouseover", () => {
+        para.textContent = "prime number"
+    })
 }
 
 box.appendChild(para)
@@ -42,3 +51,7 @@ function isPrime(number) {
     }
     return true;
 }
+
+
+
+// addEventListener("mouseover")
